@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Heewoong Kim</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WDD 131 – Dynamic Web Fundamentals – Heewoong Kim</title>
+  <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals. Heewoong Kim. Course landing page with about-me info">
+  <meta name="author" content="Heewoong Kim">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    Hi
+  <header>
+    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank" rel="noopener">Scripture</a>
+      <a href="final-project/" >Final Project</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Heewoong Kim</h1>
+
+    <section class="card">
+      <h2>About Me</h2>
+
+      <div class="card-grid">
+        <p>
+          Hi! My name is <strong>Heewoong Kim</strong>. I'm from Korea, and I'm currently pursuing a bachelor's degree in Software Development.
+        </p>
+
+        <figure class="portrait">
+          <img src="images/portrait.jpg" alt="Portrait of Heewoong Kim" width="300" height="300" loading="lazy">
+          <figcaption>That’s me.</figcaption>
+        </figure>
+
+        <div class="place">
+          <h3>Seoul, Korea</h3>
+          <p>
+            South Korea is a fascinating blend of ancient traditions and cutting-edge modernity, home to one of the most technologically advanced societies globally. Another unique cultural fact is the way age is calculated: a baby is considered one year old at birth and turns a year older on every Lunar New Year, a tradition that means everyone's age changes on the same day.
+          </p>
+          <figure class="flag">
+            <img src="images/flag.jpg" alt="Official flag of Korea" width="180" height="120" loading="lazy">
+            <figcaption>Official Flag of Korea</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Web Dev Resources</h2>
+      <ul class="resources">
+        <li><a href="https://dev.to" target="_blank" rel="noopener">Dev.to Community</a></li>
+        <li><a href="https://www.smashingmagazine.com" target="_blank" rel="noopener">Smashing Magazine</a></li>
+        <li><a href="https://css-tricks.com" target="_blank" rel="noopener">CSS-Tricks</a></li>
+        <li><a href="https://www.w3schools.com" target="_blank" rel="noopener">W3Schools</a></li>
+        <li><a href="https://www.udemy.com" target="_blank" rel="noopener">Udemy</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> • Heewoong Kim • Seoul/Korea
+    </p>
+    <p id="lastModified"></p>
+  </footer>
 </body>
 </html>
