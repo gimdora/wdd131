@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Temple Album</title>
+  <meta name="description" content="Responsive temple picture album: filter links and a mobile hamburger menu." />
+  <meta name="author" content="Heewoong Kim" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 48rem)">
+
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo">Temple Album</span>
+      <button id="menu" class="menu-button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">☰</button>
+    </div>
+
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Old</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Large</a></li>
+        <li><a href="#">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section class="gallery" aria-label="Temple gallery">
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple-1.jpg" alt="San Diego California Temple" width="640" height="426" loading="lazy">
+        <figcaption>San Diego California</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="currentyear"></span> • Heewoong Kim • Korea</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
