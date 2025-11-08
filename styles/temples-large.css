@@ -1,16 +1,17 @@
-.menu-button{ display:none; }
+@media (min-width: 48rem){
 
-.nav{
-  padding:.25rem 1rem 1rem;
-}
-.nav-links{
-  display:flex !important;
-  flex-direction:row;
-  justify-content:flex-end;
-  gap:.5rem;
-}
+  .menu-button{ display:none; }
 
-.gallery{
-  grid-template-columns: repeat(3, 1fr);
-  gap:1rem;
+  .nav{ padding:.25rem 1rem 1rem; }
+  .nav-links{
+    display:flex !important;
+    flex-direction:row;
+    justify-content:flex-end;
+    gap:.5rem;
+  }
+
+  .gallery{
+    grid-template-columns: repeat(3, 1fr);
+    gap:1rem;
+  }
 }
