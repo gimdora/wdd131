@@ -1,0 +1,83 @@
+:root{
+  --ink: rgb(31 41 55);
+  --muted: rgb(75 85 99);
+  --bg: #0b3d79;
+  --card: #ffffff;
+  --brand: #0a4fa8;
+  --shadow: 0 10px 24px rgba(0,0,0,.18);
+  --radius: 12px;
+  --gap: 1rem;
+  --font: "Inter", system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font); color:var(--ink); line-height:1.5; background:#f6f7fb}
+
+.site-header{
+  background: var(--bg);
+  color: #fff;
+  padding: .85rem 1rem;
+  text-align:center;
+}
+.site-header h1{margin:0; font-weight:700; letter-spacing:.2px}
+
+.hero{position:relative; overflow:clip}
+.hero img{
+  display:block;
+  width:100%;
+  height:min(70vh,760px);
+  object-fit:cover;
+  position:relative;
+  z-index:0;
+}
+
+.panel{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+  width:min(92%, 720px);
+  margin: 1rem auto 0;
+}
+.panel-title{margin:0 0 .5rem; color:var(--brand); font-weight:700}
+.facts{display:grid; gap:.5rem}
+.facts dt{font-weight:600; color:var(--muted)}
+.facts dd{margin:0}
+
+.weather-list{list-style:none; padding:0; margin:.5rem 0 0}
+.weather-list li+li{margin-top:.4rem}
+.wx-icon{display:inline-block; vertical-align:middle; margin:.25rem 0 .5rem}
+
+@media (min-width:900px){
+  .panel{
+    position:absolute;
+    z-index:5;
+    width:auto;
+    max-width:520px;
+  }
+  .data-panel{left:2rem; bottom:2rem}
+  .weather-panel{right:2rem; bottom:2rem; width:320px}
+
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    box-shadow: inset 0 -90px 160px rgba(0,0,0,.22);
+    z-index:2; pointer-events:none;
+  }
+
+  .weather-panel .wx-icon{display:none}
+  #weather-h::after{
+    content: "  ⛅";
+    margin-left:.25rem;
+  }
+}
+
+.site-footer{
+  background: var(--bg);
+  color:#fff;
+  text-align:center;
+  padding: 1rem .75rem 1.25rem;
+  margin-top: 1.5rem;
+}
+.site-footer p{margin:.25rem 0}

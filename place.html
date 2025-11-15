@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="South Korea — quick facts and current weather with wind chill, responsive hero image, and accessible layout.">
+  <meta name="author" content="Heewoong Kim">
+  <title>South Korea — Country Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/place.css">
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>South Korea</h1>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/korea-hero-large.webp" media="(min-width: 900px)">
+        <img src="images/korea-hero-small.webp" alt="Seoul skyline with Namsan Tower">
+      </picture>
+
+      <div class="panel data-panel" aria-labelledby="data-h">
+        <h2 id="data-h" class="panel-title">Data</h2>
+        <dl class="facts">
+          <div><dt>Area</dt><dd>100,412 km²</dd></div>
+          <div><dt>Population</dt><dd>≈ 51.7 million</dd></div>
+          <div><dt>Capital</dt><dd>Seoul</dd></div>
+          <div><dt>Languages</dt><dd>Korean</dd></div>
+          <div><dt>Currency</dt><dd>South Korean Won (KRW)</dd></div>
+          <div><dt>Time Zone</dt><dd>KST (UTC+9)</dd></div>
+          <div><dt>Calling Code</dt><dd>+82</dd></div>
+          <div><dt>Internet TLD</dt><dd>.kr</dd></div>
+        </dl>
+      </div>
+
+      <div class="panel weather-panel" aria-labelledby="weather-h">
+        <h2 id="weather-h" class="panel-title">Weather</h2>
+        <img class="wx-icon" src="images/partly-cloudy.svg" alt="" width="40" height="40">
+        <ul class="weather-list">
+          <li><strong>Temperature:</strong> <span id="t">5</span> °C</li>
+          <li><strong>Conditions:</strong> Partly Cloudy</li>
+          <li><strong>Wind:</strong> <span id="w">12</span> km/h</li>
+          <li><strong>Wind Chill:</strong> <span id="wc">N/A</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Heewoong Kim • South Korea</p>
+    <p id="lastmod"></p>
+  </footer>
+</body>
+</html>
