@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temple Album – Filtered</title>
+  <meta name="description" content="Filter and browse temple cards; lazy-loaded images.">
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+  <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">Temple Album</div>
+      <button id="menu" class="menu-button" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+    <nav class="nav" aria-label="Main">
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#" data-filter="all" aria-current="page">Home</a></li>
+        <li><a href="#" data-filter="old">Old</a></li>
+        <li><a href="#" data-filter="new">New</a></li>
+        <li><a href="#" data-filter="large">Large</a></li>
+        <li><a href="#" data-filter="small">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Temples</h1>
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <span id="year"></span> • Your Name
+    </p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
