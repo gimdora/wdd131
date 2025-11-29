@@ -39,22 +39,23 @@ body{
   margin:0 0 .5rem 0;
   flex-wrap:wrap;
 }
-.nav-btn{
+.nav-links .nav-link{
+  display:inline-block;
+  text-decoration:none;
   background:transparent;
   border:2px solid var(--brand-ink);
   color:var(--brand-ink);
   padding:.4rem .8rem;
   border-radius:.5rem;
-  font-weight:600;
-  cursor:pointer;
+  font-weight:700;
 }
-.nav-btn:hover,
-.nav-btn:focus{
+.nav-links .nav-link:hover,
+.nav-links .nav-link:focus{
   background:var(--brand-ink);
   color:var(--brand);
   outline:3px solid transparent;
 }
-.nav-btn.active{
+.nav-links .nav-link.active{
   background:var(--brand-ink);
   color:var(--brand);
 }
@@ -93,7 +94,7 @@ body{
   color:var(--muted);
   font-size:.95rem;
   display:grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns:max-content 1fr;
   gap:.25rem .75rem;
 }
 .meta span.label{font-weight:700;color:var(--ink)}
