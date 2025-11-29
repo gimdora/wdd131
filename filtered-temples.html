@@ -1,39 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temple Album – Filtered</title>
-  <meta name="description" content="Filter and browse temple cards; lazy-loaded images.">
+  <meta name="description" content="Temple Album: filter and browse temple cards with lazy-loaded images. View old, new, large, or small temples and all temples.">
+  <meta name="author" content="Heewoong Kim">
   <link rel="stylesheet" href="styles/filtered-temples.css">
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="brand">
-      <div class="logo">Temple Album</div>
-      <button id="menu" class="menu-button" aria-expanded="false" aria-controls="nav-links">☰</button>
-    </div>
-    <nav class="nav" aria-label="Main">
-      <ul id="nav-links" class="nav-links">
-        <li><a href="#" data-filter="all" aria-current="page">Home</a></li>
-        <li><a href="#" data-filter="old">Old</a></li>
-        <li><a href="#" data-filter="new">New</a></li>
-        <li><a href="#" data-filter="large">Large</a></li>
-        <li><a href="#" data-filter="small">Small</a></li>
+    <h1>Temple Album</h1>
+    <nav aria-label="Filters">
+      <ul class="nav-links">
+        <li><button class="nav-btn active" data-filter="home" aria-current="page">Home</button></li>
+        <li><button class="nav-btn" data-filter="old">Old</button></li>
+        <li><button class="nav-btn" data-filter="new">New</button></li>
+        <li><button class="nav-btn" data-filter="large">Large</button></li>
+        <li><button class="nav-btn" data-filter="small">Small</button></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h1>Temples</h1>
+  <main id="main">
     <section id="gallery" class="gallery" aria-live="polite"></section>
   </main>
 
   <footer class="site-footer">
-    <p>
-      <span id="year"></span> • Your Name
-    </p>
+    <p>© <span id="year"></span> Heewoong Kim • Temple Album</p>
     <p id="lastModified"></p>
   </footer>
 </body>
