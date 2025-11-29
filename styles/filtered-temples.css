@@ -32,7 +32,6 @@ body{
 }
 
 .nav-links{
-  list-style:none;
   display:flex;
   gap:.5rem;
   padding:0;
@@ -59,6 +58,7 @@ body{
   background:var(--brand-ink);
   color:var(--brand);
 }
+
 
 .gallery{
   max-width:1100px;
