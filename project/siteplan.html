@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Plan – MapleStory Mini Toolkit</title>
+  <meta name="description" content="Site plan for MapleStory (KMS) Mini Toolkit: pages, purpose, scenarios, color schema, typography, and wireframes for a responsive, accessible web app.">
+  <meta name="author" content="Heewoong Kim">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#0f172a;
+      --ink:#e5eefc;
+      --muted:#b6c2e2;
+      --brand:#0ea5e9;
+      --accent:#f97316;
+      --ok:#16a34a;
+      --shadow:0 10px 24px rgba(0,0,0,.25);
+      --round:16px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--ink);
+      background:linear-gradient(180deg,#0b1020 0%, #0c1833 100%);
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:focus-visible, a:hover{outline:2px solid var(--brand);outline-offset:2px}
+    header,main,footer{display:block}
+    header{
+      background:var(--panel);
+      border-bottom:2px solid #1f2a44;
+      position:sticky;top:0;z-index:10;
+    }
+    .wrap{max-width:var(--max);margin:auto;padding:1.25rem}
+    .title{
+      display:flex;gap:.75rem;align-items:center;justify-content:space-between
+    }
+    .badge{font-weight:800;color:var(--bg);background:var(--brand);padding:.25rem .5rem;border-radius:10px}
+    .grid{display:grid;gap:1rem}
+    @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+    section{
+      background:var(--panel);
+      border-radius:var(--round);
+      padding:1.25rem 1.25rem 1.5rem;
+      box-shadow:var(--shadow);
+      border:1px solid #1f2a44;
+    }
+    h1,h2,h3{line-height:1.25;margin:.25rem 0 .75rem}
+    h1{font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:800}
+    h2{font-size:clamp(1.25rem,1.8vw,1.5rem);font-weight:800;color:#cfe8ff}
+    h3{font-size:1.05rem;font-weight:700;color:#cfe8ff}
+    .mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+    .pill{display:inline-block;background:#132036;border:1px solid #24324f;border-radius:999px;padding:.2rem .6rem;color:var(--muted);margin:.15rem 0}
+    .list{margin:.25rem 0 0 1rem}
+    .colors{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin-top:.5rem}
+    .sw{border-radius:12px;padding:.75rem;border:1px solid #223255}
+    .sw b{display:block;margin-bottom:.25rem}
+    .sw .box{height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.15);margin:.35rem 0}
+    .sw[data="brand"] .box{background:var(--brand)}
+    .sw[data="accent"] .box{background:var(--accent)}
+    .sw[data="panel"] .box{background:var(--panel)}
+    .sw[data="bg"] .box{background:var(--bg)}
+    .sw[data="ink"] .box{background:var(--ink)}
+    .apply{display:grid;gap:.5rem;margin-top:.75rem}
+    .tag{background:#132036;border:1px solid #223255;border-radius:8px;padding:.35rem .55rem;display:inline-block}
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:12px;border:1px solid #223255;background:#0e1530}
+    th,td{padding:.6rem .75rem;border-bottom:1px solid #1f2a44}
+    th{text-align:left;color:#cce0ff}
+    tr:last-child td{border-bottom:0}
+    .ok{color:var(--ok)}
+    footer{background:var(--panel);border-top:2px solid #1f2a44;margin-top:2rem}
+    .wire{background:#0d142c;border:1px dashed #2b3a65;border-radius:12px;padding:10px}
+    .svg{width:100%;height:auto;display:block}
+    .sr-only{position:absolute;left:-9999px}
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap title">
+      <h1>MapleStory Mini Toolkit – Site Plan</h1>
+      <span class="badge">W05</span>
+    </div>
+  </header>
+
+  <main id="main" class="wrap grid">
+    <section aria-labelledby="site-name">
+      <h2 id="site-name">Site Name</h2>
+      <p><strong>MapleStory Mini Toolkit</strong> – a lightweight, fast set of web tools for MapleStory (KMS) players. The name communicates a focused, utility-first helper that feels quick and portable.</p>
+      <p class="mono pill">Optional domain: kms-mini-toolkit.org</p>
+    </section>
+
+    <section aria-labelledby="purpose">
+      <h2 id="purpose">Site Purpose</h2>
+      <ul class="list">
+        <li>Provide calculators for stats, potential/additional potential, Star Force cost, and upgrade efficiency.</li>
+        <li>Offer a searchable item database with filters, sorting, pagination, and expandable details.</li>
+        <li>Save favorites and settings (dark mode) in the browser for quick return visits.</li>
+        <li>Publish concise beginner guides and a glossary for new or returning players.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="scenarios">
+      <h2 id="scenarios">Target Scenarios</h2>
+      <ul class="list">
+        <li>“If I cube this emblem, how much main stat will I gain on average compared to Star Force?”</li>
+        <li>“Show only level 140–160 warrior gear with Epic+ potential and sort by attack.”</li>
+        <li>“Compare two rings side-by-side and highlight the more efficient upgrade path.”</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="pages">
+      <h2 id="pages">Pages</h2>
+      <table aria-describedby="pages-desc">
+        <caption id="pages-desc" class="sr-only">Project pages and content</caption>
+        <thead><tr><th>Page</th><th>Key Content</th></tr></thead>
+        <tbody>
+          <tr><td>Home</td><td>Intro, featured tools, recently saved favorites</td></tr>
+          <tr><td>Item DB</td><td>Card list, search, filters (job/level/rarity), sorting, pagination</td></tr>
+          <tr><td>Tools</td><td>Stat/potential calculators, Star Force estimator, upgrade comparator</td></tr>
+          <tr><td>Guides</td><td>Beginner upgrade flow, cubes overview, glossary</td></tr>
+          <tr><td>References</td><td>Citations for data/images; minimal styling</td></tr>
+          <tr><td>Feedback Form</td><td>Title, category, suggestion text, optional email; HTML5 validation</td></tr>
+        </tbody>
+      </table>
+      <p class="mono pill">All pages share a common navigation and theme</p>
+    </section>
+
+    <section aria-labelledby="js-spec">
+      <h2 id="js-spec">JavaScript Requirements</h2>
+      <ul class="list">
+        <li>Objects/arrays with <span class="mono">map</span>, <span class="mono">filter</span>, <span class="mono">reduce</span>, <span class="mono">sort</span>.</li>
+        <li>DOM interaction with event listeners for input, click, and submit; conditional branching for job/weapon formulas and validation.</li>
+        <li>Template literals exclusively for UI strings.</li>
+        <li><span class="mono">localStorage</span> for favorites, recent searches/comparisons, and dark-mode preference.</li>
+        <li>Lazy loading images, skeleton cards, focus management, ARIA labels.</li>
+      </ul>
+      <p class="ok">All items map directly to the W06 checklist.</p>
+    </section>
+
+    <section aria-labelledby="colors">
+      <h2 id="colors">Color Schema</h2>
+      <div class="colors" role="list">
+        <div class="sw" data="brand" role="listitem">
+          <b>Brand</b>
+          <div class="box" title="#0ea5e9"></div>
+          <code class="mono">#0ea5e9</code>
+          <div class="apply">
+            <span class="tag">links</span><span class="tag">CTA</span><span class="tag">focus</span>
+          </div>
+        </div>
+        <div class="sw" data="accent" role="listitem">
+          <b>Accent</b>
+          <div class="box" title="#f97316"></div>
+          <code class="mono">#f97316</code>
+          <div class="apply">
+            <span class="tag">badges</span><span class="tag">highlights</span>
+          </div>
+        </div>
+        <div class="sw" data="panel" role="listitem">
+          <b>Panel</b>
+          <div class="box" title="#0f172a"></div>
+          <code class="mono">#0f172a</code>
+          <div class="apply">
+            <span class="tag">cards</span><span class="tag">nav</span>
+          </div>
+        </div>
+        <div class="sw" data="bg" role="listitem">
+          <b>Background</b>
+          <div class="box" title="#0b1020"></div>
+          <code class="mono">#0b1020</code>
+          <div class="apply">
+            <span class="tag">page</span>
+          </div>
+        </div>
+        <div class="sw" data="ink" role="listitem">
+          <b>Text</b>
+          <div class="box" title="#e5eefc"></div>
+          <code class="mono">#e5eefc</code>
+          <div class="apply">
+            <span class="tag">body</span><span class="tag">headings</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="type">
+      <h2 id="type">Typography</h2>
+      <table>
+        <thead><tr><th>Font</th><th>Use</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Inter</td>
+            <td>Headings and body UI text</td>
+            <td><span style="font-weight:800">Bold Headline</span> • Regular body text</td>
+          </tr>
+          <tr>
+            <td>JetBrains Mono</td>
+            <td>Inline code, data readouts, formulas</td>
+            <td class="mono">ATK=⌊(STR×4 + DEX)×1.2⌋</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="wireframes">
+      <h2 id="wireframes">Wireframes</h2>
+      <div class="grid">
+        <div class="wire" aria-label="Mobile wireframe">
+          <h3>Mobile</h3>
+          <svg class="svg" viewBox="0 0 320 560" role="img" aria-label="Mobile layout sketch">
+            <rect x="5" y="5" width="310" height="40" rx="8" fill="#1b2647" stroke="#375295"/>
+            <rect x="5" y="55" width="310" height="140" rx="8" fill="#132036" stroke="#375295"/>
+            <rect x="5" y="205" width="310" height="140" rx="8" fill="#132036" stroke="#375295"/>
+            <rect x="5" y="355" width="310" height="140" rx="8" fill="#132036" stroke="#375295"/>
+            <text x="12" y="30" fill="#cfe8ff" font-family="Inter" font-size="12">Header / Nav</text>
+            <text x="12" y="80" fill="#86b5ff" font-family="Inter" font-size="12">Featured tools</text>
+            <text x="12" y="230" fill="#86b5ff" font-family="Inter" font-size="12">Item DB cards</text>
+            <text x="12" y="380" fill="#86b5ff" font-family="Inter" font-size="12">Guides</text>
+          </svg>
+        </div>
+        <div class="wire" aria-label="Desktop wireframe">
+          <h3>Desktop</h3>
+          <svg class="svg" viewBox="0 0 720 420" role="img" aria-label="Desktop layout sketch">
+            <rect x="10" y="10" width="700" height="46" rx="8" fill="#1b2647" stroke="#375295"/>
+            <rect x="10" y="70" width="420" height="150" rx="8" fill="#132036" stroke="#375295"/>
+            <rect x="440" y="70" width="270" height="150" rx="8" fill="#132036" stroke="#375295"/>
+            <rect x="10" y="230" width="340" height="170" rx="8" fill="#132036" stroke="#375295"/>
+            <rect x="360" y="230" width="350" height="170" rx="8" fill="#132036" stroke="#375295"/>
+            <text x="20" y="40" fill="#cfe8ff" font-family="Inter" font-size="14">Header / Nav</text>
+            <text x="20" y="95" fill="#86b5ff" font-family="Inter" font-size="12">Hero + featured</text>
+            <text x="450" y="95" fill="#86b5ff" font-family="Inter" font-size="12">Filters</text>
+            <text x="20" y="255" fill="#86b5ff" font-family="Inter" font-size="12">Item DB grid</text>
+            <text x="370" y="255" fill="#86b5ff" font-family="Inter" font-size="12">Tools / Guides</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="refs">
+      <h2 id="refs">Reference to Proposal</h2>
+      <p>This plan reflects the previously submitted subject and planned content for the MapleStory Mini Toolkit, including pages, calculators, filters, localStorage usage, and accessibility goals. :contentReference[oaicite:0]{index=0}</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="y"></span> MapleStory Mini Toolkit • Site Plan</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("y").textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
