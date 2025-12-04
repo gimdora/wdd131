@@ -181,3 +181,6 @@ button{
   cursor:pointer;
 }
 button:hover{filter:brightness(1.05)}
+
+.mt-4 { margin-top: 1rem; }
+.mt-2 { margin-top: .5rem; }
