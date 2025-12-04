@@ -63,7 +63,6 @@ section li{margin:.2rem 0}
 .sw{
   border-radius:12px;
   padding:.75rem;
-  background:linear-gradient(180deg,var(--c),var(--c));
   color:#fff;
   display:grid;
   gap:.25rem;
@@ -71,7 +70,14 @@ section li{margin:.2rem 0}
   place-content:end start;
   position:relative;
   box-shadow:0 4px 16px rgba(2,6,23,.25);
+  background:linear-gradient(180deg,#444,#333);
 }
+.sw.brand{background:linear-gradient(180deg,var(--brand),var(--brand))}
+.sw.accent{background:linear-gradient(180deg,var(--accent),var(--accent))}
+.sw.bg{background:linear-gradient(180deg,var(--bg),var(--bg))}
+.sw.ink{background:linear-gradient(180deg,var(--ink),var(--ink))}
+.sw.card{background:linear-gradient(180deg,var(--card),var(--card)); color:#111}
+
 .sw span{font-weight:800;letter-spacing:.4px}
 .sw small{opacity:.9}
 
