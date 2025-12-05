@@ -1,122 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Product Review form to rate a product, record installation date, note useful features, and submit a written review.">
-<meta name="author" content="Heewoong Kim">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Product Review</title>
+<meta name="description" content="Submit a product review with rating, install date, useful features, and an optional written review.">
+<meta name="author" content="Heewoong Kim">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/form.css">
-<script defer src="scripts/form.js"></script>
 </head>
 <body>
 <header class="site-header">
   <h1>Product Review</h1>
 </header>
 
-<main>
+<main class="container">
   <form id="reviewForm" method="get" action="review.html" novalidate>
-    <fieldset>
-      <legend>Product</legend>
-
-      <label for="product">Product Name</label>
-      <select id="product" name="product" required>
+    <div class="field">
+      <label for="productName">Product Name</label>
+      <select id="productName" name="product" required>
         <option value="" disabled selected>Select a Product ...</option>
       </select>
-    </fieldset>
+    </div>
 
-    <fieldset>
+    <fieldset class="field">
       <legend>Overall Rating</legend>
-
       <div class="rating">
         <input type="radio" id="rate5" name="rating" value="5" required>
-        <label for="rate5">
-          <span aria-hidden="true">★★★★★</span>
-          <span class="sr-only">5 stars</span>
-        </label>
+        <label for="rate5" aria-label="5 stars">☆</label>
 
-        <input type="radio" id="rate4" name="rating" value="4">
-        <label for="rate4">
-          <span aria-hidden="true">★★★★☆</span>
-          <span class="sr-only">4 stars</span>
-        </label>
+        <input type="radio" id="rate4" name="rating" value="4" required>
+        <label for="rate4" aria-label="4 stars">☆</label>
 
-        <input type="radio" id="rate3" name="rating" value="3">
-        <label for="rate3">
-          <span aria-hidden="true">★★★☆☆</span>
-          <span class="sr-only">3 stars</span>
-        </label>
+        <input type="radio" id="rate3" name="rating" value="3" required>
+        <label for="rate3" aria-label="3 stars">☆</label>
 
-        <input type="radio" id="rate2" name="rating" value="2">
-        <label for="rate2">
-          <span aria-hidden="true">★★☆☆☆</span>
-          <span class="sr-only">2 stars</span>
-        </label>
+        <input type="radio" id="rate2" name="rating" value="2" required>
+        <label for="rate2" aria-label="2 stars">☆</label>
 
-        <input type="radio" id="rate1" name="rating" value="1">
-        <label for="rate1">
-          <span aria-hidden="true">★☆☆☆☆</span>
-          <span class="sr-only">1 star</span>
-        </label>
+        <input type="radio" id="rate1" name="rating" value="1" required>
+        <label for="rate1" aria-label="1 star">☆</label>
       </div>
     </fieldset>
 
-    <fieldset>
-      <legend>Installation</legend>
-
+    <div class="field">
       <label for="installDate">Date of Installation</label>
-      <input id="installDate" name="installDate" type="date" required>
-    </fieldset>
+      <input id="installDate" name="installed" type="date" required>
+    </div>
 
-    <fieldset>
-      <legend>Useful Features</legend>
-
+    <fieldset class="field">
+      <legend>Which features did you find useful? (Check all that apply)</legend>
       <div class="checks">
         <div class="check">
-          <input id="durability" name="features" type="checkbox" value="Durability">
-          <label for="durability">Durability</label>
+          <input id="feat-durability" name="features" type="checkbox" value="durability">
+          <label for="feat-durability">Durability</label>
         </div>
         <div class="check">
-          <input id="ease" name="features" type="checkbox" value="Ease of Use">
-          <label for="ease">Ease of Use</label>
+          <input id="feat-ease" name="features" type="checkbox" value="ease-of-use">
+          <label for="feat-ease">Ease of Use</label>
         </div>
         <div class="check">
-          <input id="performance" name="features" type="checkbox" value="Performance">
-          <label for="performance">Performance</label>
+          <input id="feat-perf" name="features" type="checkbox" value="performance">
+          <label for="feat-perf">Performance</label>
         </div>
         <div class="check">
-          <input id="design" name="features" type="checkbox" value="Design">
-          <label for="design">Design</label>
+          <input id="feat-design" name="features" type="checkbox" value="design">
+          <label for="feat-design">Design</label>
         </div>
       </div>
     </fieldset>
 
-    <fieldset>
-      <legend>Written Review</legend>
+    <div class="field">
+      <label for="writtenReview">Written Review (Optional)</label>
+      <textarea id="writtenReview" name="review" rows="6" placeholder="Share your experience"></textarea>
+    </div>
 
-      <label for="reviewText">Review (optional)</label>
-      <textarea id="reviewText" name="reviewText" rows="6" placeholder="Share your experience..."></textarea>
-    </fieldset>
-
-    <fieldset>
-      <legend>Your Name</legend>
-
-      <label for="userName">Name (optional)</label>
-      <input id="userName" name="userName" type="text" autocomplete="name" inputmode="latin-name" placeholder="Your name">
-    </fieldset>
+    <div class="field">
+      <label for="userName">Your Name (Optional)</label>
+      <input id="userName" name="userName" type="text" autocomplete="name" placeholder="Your name">
+    </div>
 
     <div class="actions">
-      <input type="submit" value="Post Review">
+      <input type="submit" value="Post Review" class="btn">
     </div>
   </form>
 </main>
 
 <footer class="site-footer">
-  <p><span id="copyrightYear"></span> Heewoong Kim</p>
-  <p id="lastModified"></p>
+  <p>© <span id="year"></span> Heewoong Kim • Product Review</p>
+  <p>Last Modified: <span id="lastmod"></span></p>
 </footer>
+
+<script src="scripts/form.js" defer></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastmod').textContent = document.lastModified;
+</script>
 </body>
 </html>

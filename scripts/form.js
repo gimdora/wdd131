@@ -6,15 +6,10 @@ const products = [
   { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
 ];
 
-const productSelect = document.querySelector("#product");
+const selectEl = document.getElementById("productName");
 products.forEach(p => {
   const opt = document.createElement("option");
   opt.value = p.id;
   opt.textContent = p.name;
-  productSelect.appendChild(opt);
+  selectEl.appendChild(opt);
 });
-
-const yearEl = document.querySelector("#copyrightYear");
-const modEl = document.querySelector("#lastModified");
-if (yearEl) yearEl.textContent = `© ${new Date().getFullYear()}`;
-if (modEl) modEl.textContent = `Last Modified: ${document.lastModified}`;
