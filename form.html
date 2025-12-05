@@ -1,102 +1,102 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Product Review</title>
-<meta name="description" content="Submit a product review with rating, install date, useful features, and an optional written review.">
-<meta name="author" content="Heewoong Kim">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/form.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Review</title>
+  <meta name="description" content="Product Review form with dynamic product list, star rating, useful features, and confirmation counter.">
+  <meta name="author" content="Heewoong Kim">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
-<header class="site-header">
-  <h1>Product Review</h1>
-</header>
+  <header class="site-header">
+    <h1>Product Review</h1>
+  </header>
 
-<main class="container">
-  <form id="reviewForm" method="get" action="review.html" novalidate>
-    <div class="field">
-      <label for="productName">Product Name</label>
-      <select id="productName" name="product" required>
-        <option value="" disabled selected>Select a Product ...</option>
-      </select>
-    </div>
+  <main>
+    <form id="reviewForm" method="get" action="review.html" novalidate>
+      <fieldset class="field">
+        <legend>Product Name</legend>
+        <label for="product">Choose a Product</label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+      </fieldset>
 
-    <fieldset class="field">
-      <legend>Overall Rating</legend>
-      <div class="rating">
-        <input type="radio" id="rate5" name="rating" value="5" required>
-        <label for="rate5" aria-label="5 stars">☆</label>
+      <fieldset class="field">
+        <legend>Overall Rating</legend>
+        <div class="stars" role="radiogroup" aria-label="Overall rating">
+          <input aria-label="1 star" required type="radio" id="rate1" name="rating" value="1">
+          <label for="rate1" class="star" title="1 star">&#9734;</label>
 
-        <input type="radio" id="rate4" name="rating" value="4" required>
-        <label for="rate4" aria-label="4 stars">☆</label>
+          <input aria-label="2 stars" required type="radio" id="rate2" name="rating" value="2">
+          <label for="rate2" class="star" title="2 stars">&#9734;</label>
 
-        <input type="radio" id="rate3" name="rating" value="3" required>
-        <label for="rate3" aria-label="3 stars">☆</label>
+          <input aria-label="3 stars" required type="radio" id="rate3" name="rating" value="3">
+          <label for="rate3" class="star" title="3 stars">&#9734;</label>
 
-        <input type="radio" id="rate2" name="rating" value="2" required>
-        <label for="rate2" aria-label="2 stars">☆</label>
+          <input aria-label="4 stars" required type="radio" id="rate4" name="rating" value="4">
+          <label for="rate4" class="star" title="4 stars">&#9734;</label>
 
-        <input type="radio" id="rate1" name="rating" value="1" required>
-        <label for="rate1" aria-label="1 star">☆</label>
+          <input aria-label="5 stars" required type="radio" id="rate5" name="rating" value="5">
+          <label for="rate5" class="star" title="5 stars">&#9734;</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Date of Installation</legend>
+        <label for="installDate">Installation Date</label>
+        <input id="installDate" name="installDate" type="date" required>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Which features did you find useful? (Check all that apply)</legend>
+        <div class="checks">
+          <div class="check">
+            <input type="checkbox" id="durability" name="features" value="durability">
+            <label for="durability">Durability</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="ease" name="features" value="ease_of_use">
+            <label for="ease">Ease of Use</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="performance" name="features" value="performance">
+            <label for="performance">Performance</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="design" name="features" value="design">
+            <label for="design">Design</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Written Review (Optional)</legend>
+        <label for="reviewText">Your Review</label>
+        <textarea id="reviewText" name="reviewText" rows="6" maxlength="1200" placeholder="Share your experience (optional)"></textarea>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Your Name (Optional)</legend>
+        <label for="userName">Name</label>
+        <input id="userName" name="userName" type="text" autocomplete="name" placeholder="Your name">
+      </fieldset>
+
+      <div class="actions">
+        <input type="submit" value="Post Review" class="btn">
       </div>
-    </fieldset>
+    </form>
+  </main>
 
-    <div class="field">
-      <label for="installDate">Date of Installation</label>
-      <input id="installDate" name="installed" type="date" required>
-    </div>
+  <footer class="site-footer">
+    <p><span id="year"></span> Heewoong Kim • Product Review</p>
+    <p>Last Modification: <span id="modified"></span></p>
+  </footer>
 
-    <fieldset class="field">
-      <legend>Which features did you find useful? (Check all that apply)</legend>
-      <div class="checks">
-        <div class="check">
-          <input id="feat-durability" name="features" type="checkbox" value="durability">
-          <label for="feat-durability">Durability</label>
-        </div>
-        <div class="check">
-          <input id="feat-ease" name="features" type="checkbox" value="ease-of-use">
-          <label for="feat-ease">Ease of Use</label>
-        </div>
-        <div class="check">
-          <input id="feat-perf" name="features" type="checkbox" value="performance">
-          <label for="feat-perf">Performance</label>
-        </div>
-        <div class="check">
-          <input id="feat-design" name="features" type="checkbox" value="design">
-          <label for="feat-design">Design</label>
-        </div>
-      </div>
-    </fieldset>
-
-    <div class="field">
-      <label for="writtenReview">Written Review (Optional)</label>
-      <textarea id="writtenReview" name="review" rows="6" placeholder="Share your experience"></textarea>
-    </div>
-
-    <div class="field">
-      <label for="userName">Your Name (Optional)</label>
-      <input id="userName" name="userName" type="text" autocomplete="name" placeholder="Your name">
-    </div>
-
-    <div class="actions">
-      <input type="submit" value="Post Review" class="btn">
-    </div>
-  </form>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> Heewoong Kim • Product Review</p>
-  <p>Last Modified: <span id="lastmod"></span></p>
-</footer>
-
-<script src="scripts/form.js" defer></script>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastmod').textContent = document.lastModified;
-</script>
+  <script src="scripts/form.js" defer></script>
 </body>
 </html>

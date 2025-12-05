@@ -6,10 +6,24 @@ const products = [
   { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
 ];
 
-const selectEl = document.getElementById("productName");
-products.forEach(p => {
-  const opt = document.createElement("option");
-  opt.value = p.id;
-  opt.textContent = p.name;
-  selectEl.appendChild(opt);
+function populateProducts() {
+  const select = document.getElementById("product");
+  const frag = document.createDocumentFragment();
+  products.forEach(p => {
+    const opt = document.createElement("option");
+    opt.value = p.id;
+    opt.textContent = p.name;
+    frag.appendChild(opt);
+  });
+  select.appendChild(frag);
+}
+
+function setFooterMeta() {
+  document.getElementById("year").textContent = `© ${new Date().getFullYear()}`;
+  document.getElementById("modified").textContent = document.lastModified;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  populateProducts();
+  setFooterMeta();
 });

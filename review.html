@@ -1,49 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Review Submitted</title>
-<meta name="description" content="Review submission confirmation with total reviews counter.">
-<meta name="author" content="Heewoong Kim">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/form.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Review • Confirmation</title>
+  <meta name="description" content="Review submission confirmation with localStorage counter.">
+  <meta name="author" content="Heewoong Kim">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/form.css">
 </head>
 <body>
-<header class="site-header">
-  <h1>Thank You</h1>
-</header>
+  <header class="site-header">
+    <h1>Thanks for Your Review</h1>
+  </header>
 
-<main class="container">
-  <section class="card">
-    <h2>Your review was submitted</h2>
-    <div class="kv">
-      <div><span>Product</span><strong id="out-product">–</strong></div>
-      <div><span>Rating</span><strong id="out-rating">–</strong></div>
-      <div><span>Installed</span><strong id="out-installed">–</strong></div>
-      <div><span>Features</span><strong id="out-features">–</strong></div>
-      <div><span>Your Name</span><strong id="out-user">–</strong></div>
-    </div>
-  </section>
+  <main class="confirm">
+    <p id="summary"></p>
+    <p id="counter"></p>
+    <a class="btn" href="form.html">Write Another Review</a>
+  </main>
 
-  <section class="card">
-    <h2>Reviews Completed On This Device</h2>
-    <p class="counter"><span id="reviewCount">0</span></p>
-    <a class="btn ghost" href="form.html">Submit Another Review</a>
-  </section>
-</main>
+  <footer class="site-footer">
+    <p><span id="year"></span> Heewoong Kim • Product Review</p>
+    <p>Last Modification: <span id="modified"></span></p>
+  </footer>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Heewoong Kim • Product Review</p>
-  <p>Last Modified: <span id="lastmod"></span></p>
-</footer>
-
-<script src="scripts/review.js" defer></script>
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastmod').textContent = document.lastModified;
-</script>
+  <script src="scripts/review.js" defer></script>
 </body>
 </html>

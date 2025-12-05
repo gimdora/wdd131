@@ -1,37 +1,42 @@
-function getParam(name) {
+const products = [
+  { id: "fc-1888", name: "flux capacitor" },
+  { id: "fc-2050", name: "power laces" },
+  { id: "fs-1987", name: "time circuits" },
+  { id: "ac-2000", name: "low voltage reactor" },
+  { id: "jj-1969", name: "warp equalizer" }
+];
+
+function lookupProductName(id) {
+  const p = products.find(x => x.id === id);
+  return p ? p.name : id || "unknown product";
+}
+
+function renderSummary() {
   const params = new URLSearchParams(window.location.search);
-  return params.getAll(name);
+  const productId = params.get("product");
+  const rating = params.get("rating");
+  const date = params.get("installDate");
+
+  const productName = lookupProductName(productId);
+  const summary = document.getElementById("summary");
+  summary.textContent = `Your review for "${productName}" was submitted with a rating of ${rating} and installation date ${date}.`;
 }
 
-const product = getParam("product")[0] || "";
-const rating = getParam("rating")[0] || "";
-const installed = getParam("installed")[0] || "";
-const features = getParam("features").join(", ") || "None selected";
-const user = getParam("userName")[0] || "Anonymous";
-const written = getParam("review")[0] || "";
-
-document.getElementById("out-product").textContent = product || "N/A";
-document.getElementById("out-rating").textContent = rating || "N/A";
-document.getElementById("out-installed").textContent = installed || "N/A";
-document.getElementById("out-features").textContent = features;
-document.getElementById("out-user").textContent = user;
-
-const key = "reviewCount";
-const current = parseInt(localStorage.getItem(key) || "0", 10);
-const next = current + 1;
-localStorage.setItem(key, String(next));
-document.getElementById("reviewCount").textContent = String(next);
-
-if (written && !document.getElementById("writtenBlock")) {
-  const container = document.querySelector(".container");
-  const block = document.createElement("section");
-  block.className = "card";
-  block.id = "writtenBlock";
-  const h = document.createElement("h2");
-  h.textContent = "Written Review";
-  const p = document.createElement("p");
-  p.textContent = written;
-  block.appendChild(h);
-  block.appendChild(p);
-  container.insertBefore(block, container.children[1]);
+function bumpCounter() {
+  const key = "reviewCount";
+  const current = Number(localStorage.getItem(key) || "0") + 1;
+  localStorage.setItem(key, String(current));
+  const counter = document.getElementById("counter");
+  counter.textContent = `Total reviews submitted on this device: ${current}`;
 }
+
+function setFooterMeta() {
+  document.getElementById("year").textContent = `© ${new Date().getFullYear()}`;
+  document.getElementById("modified").textContent = document.lastModified;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderSummary();
+  bumpCounter();
+  setFooterMeta();
+});
