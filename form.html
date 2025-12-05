@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/form.css">
+<script src="scripts/form.js" defer></script>
+<script src="scripts/common.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <h1>Product Review</h1>
+</header>
+
+<main>
+  <form id="reviewForm" method="get" action="review.html" novalidate>
+    <fieldset>
+      <legend>Product</legend>
+
+      <label for="product">Product Name</label>
+      <select id="product" name="product" required>
+        <option value="" disabled selected>Select a Product ...</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Overall Rating</legend>
+
+      <div class="stars" role="radiogroup" aria-label="Overall rating">
+        <input id="rate5" name="rating" type="radio" value="5" required>
+        <label for="rate5" aria-label="5 stars">★</label>
+
+        <input id="rate4" name="rating" type="radio" value="4" required>
+        <label for="rate4" aria-label="4 stars">★</label>
+
+        <input id="rate3" name="rating" type="radio" value="3" required>
+        <label for="rate3" aria-label="3 stars">★</label>
+
+        <input id="rate2" name="rating" type="radio" value="2" required>
+        <label for="rate2" aria-label="2 stars">★</label>
+
+        <input id="rate1" name="rating" type="radio" value="1" required>
+        <label for="rate1" aria-label="1 star">★</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Installation</legend>
+
+      <label for="installDate">Date of Installation</label>
+      <input id="installDate" name="installDate" type="date" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Useful Features</legend>
+
+      <div class="checks">
+        <div>
+          <input id="durability" name="features" type="checkbox" value="durability">
+          <label for="durability">Durability</label>
+        </div>
+        <div>
+          <input id="ease" name="features" type="checkbox" value="ease_of_use">
+          <label for="ease">Ease of Use</label>
+        </div>
+        <div>
+          <input id="performance" name="features" type="checkbox" value="performance">
+          <label for="performance">Performance</label>
+        </div>
+        <div>
+          <input id="design" name="features" type="checkbox" value="design">
+          <label for="design">Design</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Review</legend>
+
+      <label for="review">Written Review</label>
+      <textarea id="review" name="review" rows="6" placeholder="Share your experience (optional)"></textarea>
+
+      <label for="username">Your Name</label>
+      <input id="username" name="username" type="text" placeholder="Optional">
+    </fieldset>
+
+    <div class="actions">
+      <input type="submit" value="Post Review" class="btn">
+    </div>
+  </form>
+</main>
+
+<footer class="bar footer">
+  <p><span id="year"></span> Heewoong Kim • South Korea</p>
+  <p id="lastModified"></p>
+</footer>
+</body>
+</html>
