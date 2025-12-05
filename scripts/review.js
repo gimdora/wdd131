@@ -1,17 +1,33 @@
 const params = new URLSearchParams(location.search);
-const summary = document.getElementById("summary");
-
 const productId = params.get("product");
 const rating = params.get("rating");
-const installed = params.get("installDate");
-const username = params.get("username") || "Anonymous";
+const installDate = params.get("installDate");
+const features = params.getAll("features");
+const reviewText = params.get("reviewText");
+const userName = params.get("userName");
 
-let features = params.getAll("features");
-if (features.length === 0) features = ["None selected"];
-
-summary.textContent = `Product: ${productId} • Rating: ${rating} • Installed: ${installed} • Features: ${features.join(", ")} • By: ${username}`;
+const summary = document.querySelector("#summary");
+if (summary) {
+  const items = [
+    productId ? `Product: ${productId}` : "",
+    rating ? `Rating: ${rating}` : "",
+    installDate ? `Installed: ${installDate}` : "",
+    features.length ? `Features: ${features.join(", ")}` : "",
+    reviewText ? `Review: ${reviewText}` : "",
+    userName ? `Name: ${userName}` : ""
+  ].filter(Boolean);
+  summary.textContent = items.join(" • ");
+}
 
 const key = "reviewCount";
-const current = Number(localStorage.getItem(key) || "0") + 1;
-localStorage.setItem(key, String(current));
-document.getElementById("reviewCount").textContent = String(current);
+const current = Number(localStorage.getItem(key) || "0");
+const next = current + 1;
+localStorage.setItem(key, String(next));
+
+const countEl = document.querySelector("#reviewCount");
+if (countEl) countEl.textContent = String(next);
+
+const yearEl = document.querySelector("#copyrightYear");
+const modEl = document.querySelector("#lastModified");
+if (yearEl) yearEl.textContent = `© ${new Date().getFullYear()}`;
+if (modEl) modEl.textContent = `Last Modified: ${document.lastModified}`;
