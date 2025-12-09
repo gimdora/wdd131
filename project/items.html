@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Item DB • MapleStory Mini Toolkit</title>
+  <meta name="description" content="Searchable item cards with filters and favorites for KMS.">
+  <meta name="author" content="Heewoong Kim">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/items.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar" role="navigation" aria-label="Primary">
+      <p class="logo">MapleStory Mini Toolkit</p>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="items.html" aria-current="page">Item DB</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Item Database</h1>
+    <div class="filterbar" role="region" aria-label="Item filters">
+      <label for="q">Search</label>
+      <input id="q" name="q" type="text" placeholder="name or level…">
+      <label for="job">Job</label>
+      <select id="job" name="job">
+        <option value="all">All</option>
+        <option>Warrior</option><option>Mage</option><option>Archer</option>
+        <option>Thief</option><option>Pirate</option>
+      </select>
+      <label for="rarity">Rarity</label>
+      <select id="rarity" name="rarity">
+        <option value="all">All</option>
+        <option>Rare</option><option>Epic</option><option>Unique</option><option>Legendary</option>
+      </select>
+    </div>
+
+    <div id="items" class="grid cols-3" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Heewoong Kim • MapleStory Mini Toolkit</p>
+    <p>Last Modification: <span id="modified"></span></p>
+  </footer>
+</body>
+</html>
